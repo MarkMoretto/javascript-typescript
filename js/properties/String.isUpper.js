@@ -2,7 +2,7 @@
  * @author Mark Moretto
  * @returns {boolean} true if single character is uppercase; false otherwise.
  * @description String property to evaluate whether a single character is uppercase.
- * @example <caption>Determine whether character is uppercase.</caption>
+ * @example <caption>Determine whether 'A' is uppercase.</caption>
  * // returns true
  * "A".isUpper
 */
