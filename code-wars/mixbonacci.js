@@ -108,17 +108,33 @@ function mixbonacci(pattern, length) {
     let result = [];
 
     // Create Map() from pattern array with zero as the default value.
+    // The value will increase by 1 each time the function is run.
     let patmap = new Map(pattern.map(key => [key, 0]));
 
+    // Count of how many runs have been completed.  This should be
+    // less than the `length` parameter.
     let count = 0;
 
     while (count < length) {
-
+        
+        // Iterate over length of pattern array
         for (let j = 0; j < pattern.length; j++) {
+            
+            // Set current abbreviation to variable.
             let current = pattern[j];
+            
+            // Get current value of 
             let i = patmap.get(current);
+            
+            // Call function from map object
+            // Pass current `i` value as parameter.
+            // Push calculated result onto result array.
             result.push(funcmap.get(current)(i));
+            
+            // Increment value of current function by 1.
             patmap.set(current, patmap.get(current) + 1);
+            
+            // Increment count by 1.
             count++;
         }
     }
