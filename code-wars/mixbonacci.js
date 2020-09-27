@@ -100,19 +100,27 @@ funcmap.set('tet', tetranacci);
  * @description Main Mixbonacci function
  * @param {Array} pattern - Array of abbreviations to use in function.
  * @param {number} length - Number of values to return in result array.
+ * @returns {Array}
 */
 function mixbonacci(pattern, length) {
 
     if (length === 0 || pattern.length === 0) return [];
 
+    /** @type {Array} */
     let result = [];
 
-    // Create Map() from pattern array with zero as the default value.
-    // The value will increase by 1 each time the function is run.
+    /**
+     * @summary Create Map() from pattern array with zero as the default value.
+     * @description The value will increase by 1 each time the function is run.
+     * @type {Map}
+    */    
     let patmap = new Map(pattern.map(key => [key, 0]));
 
-    // Count of how many runs have been completed.  This should be
-    // less than the `length` parameter.
+
+    /**
+     * @description Count of how many runs have been completed.  This should be less than the `length` parameter.
+     * @type {number}
+    */
     let count = 0;
 
     while (count < length) {
